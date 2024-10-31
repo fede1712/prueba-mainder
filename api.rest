@@ -1,0 +1,7 @@
+GET https://api.mainder.ai/api/v1/agencies
+###
+GET https://api.mainder.ai/api/v1/career-site/agency/brandty/configuration
+###
+GET https://api.mainder.ai/api/v1/career-site/:agency_slug
+###
+GET https://api.mainder.ai/api/v1/career-site/:agency_slug/job/:job_position_id
