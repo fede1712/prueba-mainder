@@ -15,9 +15,7 @@ export const AgencyHero = async ({ agencySlug }: { agencySlug: string }) => {
           className="h-32 mt-20 sm:mt-0 sm:h-48 object-contain rounded-full"
         />
       )}
-      <h1 className="font-bold text-4xl sm:text-7xl text-center p-10 m-10 mt-20 bg-gradient-to-r from-purple-700 to-blue-700 text-transparent bg-clip-text">
-        {agencyData.name}
-      </h1>
+      <h1 className="font-bold text-4xl sm:text-7xl text-center p-10 m-10 mt-20 text-gray-50">{agencyData.name}</h1>
 
       <Link href="#agencies-vacancies">
         <svg
