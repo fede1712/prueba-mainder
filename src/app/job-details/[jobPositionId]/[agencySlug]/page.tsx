@@ -5,10 +5,16 @@ import { Location } from "@/types/agencies.type";
 import { getWorkMode } from "@/utils/getWorkMode";
 import Link from "next/link";
 
-export default async function JobDetailsPage({ params }: { params: { jobPositionId: string; agencySlug: string } }) {
-  const { agencySlug, jobPositionId } = await params;
+export default async function JobDetailsPage({
+  params,
+}: {
+  params: Promise<{ agencySlug: string; jobPositionId: string }>;
+}) {
+  const jobDetails = await getJobDetails((await params).agencySlug, (await params).jobPositionId);
 
-  const jobDetails = await getJobDetails(agencySlug, jobPositionId);
+  if (!jobDetails) {
+    return <div>No se encontraron detalles del trabajo.</div>;
+  }
 
   return (
     <div>
