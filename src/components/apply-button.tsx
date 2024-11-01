@@ -41,7 +41,7 @@ export const ApplyButton = ({
         jobDetailsLocations={jobDetailsLocations}
         jobDetailsWorMode={jobDetailsWorMode}
       />
-      <Toast isToastOpen={isToastOpen} />
+      <Toast isToastOpen={isToastOpen} text="Has aplicado con éxito" toastType="success" />
     </>
   );
 };

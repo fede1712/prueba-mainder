@@ -3,6 +3,7 @@ import { getJobsAgencies } from "@/lib/get-jobs-agencies";
 import { Agency, JobAgency } from "@/types/agencies.type";
 import { getWorkMode } from "@/utils/getWorkMode";
 import Link from "next/link";
+import { ErrorComponent } from "./error-component";
 
 export const AgenciesList = async ({ agency }: { agency: Agency }) => {
   const agenciesConfigurationData = await getAgenciesConfiguration(agency.slug);
@@ -67,6 +68,7 @@ export const AgenciesList = async ({ agency }: { agency: Agency }) => {
           ))}
         </>
       )}
+      {agenciesConfigurationData === "error" && <ErrorComponent />}
     </>
   );
 };

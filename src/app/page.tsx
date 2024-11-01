@@ -5,6 +5,7 @@ import { Agency } from "@/types/agencies.type";
 
 export default async function Home() {
   const data = await getAgencies();
+
   return (
     <main className="bg-gray-50">
       <Hero />

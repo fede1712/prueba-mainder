@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import "./toast.css";
 
-export const Toast = ({ isToastOpen }: { isToastOpen: boolean }) => {
+export const Toast = ({ isToastOpen, text, toastType }: { isToastOpen: boolean; text: string; toastType: string }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -19,7 +19,11 @@ export const Toast = ({ isToastOpen }: { isToastOpen: boolean }) => {
 
   return (
     isVisible && (
-      <div className={`toast ${mounted ? "show" : "hide"}`}>
+      <div
+        className={`${toastType === "error" ? "bg-red-50" : "bg-green-50"} text-gray-900 toast ${
+          mounted ? "show" : "hide"
+        }`}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -35,7 +39,7 @@ export const Toast = ({ isToastOpen }: { isToastOpen: boolean }) => {
           <path stroke="none" d="M0 0h24v24H0z" fill="none" />
           <path d="M5 12l5 5l10 -10" />
         </svg>
-        <p className="text-gray-950 font-semibold">Has aplicado con éxito</p>
+        <p className="text-gray-900 font-semibold">{text}</p>
       </div>
     )
   );
