@@ -6,7 +6,7 @@ export const AgencyHero = async ({ agencySlug }: { agencySlug: string }) => {
   const agencyData = await getAgenciesConfiguration(agencySlug);
 
   return (
-    <div className="flex flex-col items-center justify-center bg-gradient-to-r from-blue-950 to-purple-950 sm:h-screen">
+    <div className="flex flex-col items-center justify-center bg-gradient-to-r from-blue-950 to-purple-950 h-screen">
       <GoBackArrow />
       {agencyData.logo_url && (
         <img
