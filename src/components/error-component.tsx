@@ -15,7 +15,5 @@ export const ErrorComponent = () => {
     return () => clearTimeout(timeoutId);
   }, []);
 
-  return (
-    <Toast isToastOpen={isErrorToastOpen} text="No hemos podido traer todos los trabajos de la API" toastType="error" />
-  );
+  return <Toast isToastOpen={isErrorToastOpen} text="No hemos podido traer todos los trabajos." toastType="error" />;
 };

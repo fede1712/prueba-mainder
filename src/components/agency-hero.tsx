@@ -1,13 +1,25 @@
+import { getAgenciesConfiguration } from "@/lib/get-agencies-configuration";
 import Link from "next/link";
+import { GoBackArrow } from "./goBackArrow";
 
-export const Hero = () => {
+export const AgencyHero = async ({ agencySlug }: { agencySlug: string }) => {
+  const agencyData = await getAgenciesConfiguration(agencySlug);
+
   return (
     <div className="flex flex-col items-center justify-center bg-gradient-to-r from-blue-950 to-purple-950 sm:h-screen">
-      <h1 className="font-bold text-4xl sm:text-7xl text-center p-10 m-10 mt-20 rounded-lg text-gray-50">
-        Encuentra tu próximo desafío: el trabajo que mereces está a un clic de distancia.
+      <GoBackArrow />
+      {agencyData.logo_url && (
+        <img
+          src={agencyData.logo_url}
+          alt="Logo de la agencia"
+          className="h-32 mt-20 sm:mt-0 sm:h-48 object-contain rounded-full"
+        />
+      )}
+      <h1 className="font-bold text-4xl sm:text-7xl text-center p-10 m-10 mt-20 bg-gradient-to-r from-purple-700 to-blue-700 text-transparent bg-clip-text">
+        {agencyData.name}
       </h1>
 
-      <Link href="#vacancies">
+      <Link href="#agencies-vacancies">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="40"

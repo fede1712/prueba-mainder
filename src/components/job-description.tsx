@@ -8,8 +8,10 @@ export const JobDescription = ({ job }: { job: JobAgency }) => {
 
       <div className="flex flex-col sm:grid mx-8 gap-2 sm:grid-cols-3 sm:mx-28 ">
         <div className="bg-gray-200 px-10 py-4 rounded-lg">
-          <h4 className="text-2xl font-bold">Requisitos</h4>
-          {job.years_experience.from && job.years_experience.to && (
+          <h4 className="text-2xl font-bold bg-gradient-to-r from-purple-700 to-blue-700 text-transparent bg-clip-text">
+            Requisitos
+          </h4>
+          {job.years_experience?.from && job.years_experience?.to && (
             <p className=" text-sm">
               <span className="text-gray-900 font-bold"> Años de experiencia: </span>
               <span className="text-gray-8000">
@@ -40,7 +42,9 @@ export const JobDescription = ({ job }: { job: JobAgency }) => {
         </div>
         {job.hard_skills && (
           <div className="bg-gray-200 px-10 py-4 rounded-lg">
-            <h4 className="text-2xl font-bold">Hard skills</h4>
+            <h4 className="text-2xl font-bold bg-gradient-to-r from-purple-700 to-blue-700 text-transparent bg-clip-text">
+              Hard skills
+            </h4>
             {job.hard_skills.map((hardSkill) => (
               <ul key={hardSkill.id}>
                 <li className="text-gray-900  text-sm">{hardSkill.name}</li>
@@ -51,7 +55,9 @@ export const JobDescription = ({ job }: { job: JobAgency }) => {
 
         {job.soft_skills && (
           <div className={`bg-gray-200 px-10 py-4 rounded-lg ${job.benefits ? "sm:row-span-2" : ""}`}>
-            <h4 className="text-2xl font-bold">Soft skills</h4>
+            <h4 className="text-2xl font-bold bg-gradient-to-r from-purple-700 to-blue-700 text-transparent bg-clip-text">
+              Soft skills
+            </h4>
             {job.soft_skills.map((softSkill) => (
               <ul key={softSkill.id}>
                 <li className="text-gray-900 text-sm">{softSkill.name}</li>
@@ -62,7 +68,9 @@ export const JobDescription = ({ job }: { job: JobAgency }) => {
 
         {job.benefits && (
           <div className="bg-gray-200 px-10 py-4 rounded-lg col-span-2">
-            <h4 className="text-2xl font-bold">Beneficios</h4>
+            <h4 className="text-2xl font-bold bg-gradient-to-r from-purple-700 to-blue-700 text-transparent bg-clip-text">
+              Beneficios
+            </h4>
             {job.benefits.map((benefit, idx) => (
               <ul key={idx}>
                 <li className="text-gray-900 text-sm">{benefit}</li>
@@ -70,9 +78,11 @@ export const JobDescription = ({ job }: { job: JobAgency }) => {
             ))}
           </div>
         )}
-        {job.expected_salary.amount && (
+        {job.expected_salary?.amount && (
           <div className="bg-gray-200 px-10 py-4 rounded-lg">
-            <h4 className="text-2xl font-bold">Salario</h4>
+            <h4 className="text-2xl font-bold bg-gradient-to-r from-purple-700 to-blue-700 text-transparent bg-clip-text">
+              Salario
+            </h4>
             <ul>
               <li className="text-gray-900 text-sm">
                 {job.expected_salary.amount} - {job.expected_salary.currency}
@@ -82,7 +92,7 @@ export const JobDescription = ({ job }: { job: JobAgency }) => {
         )}
       </div>
       <div className="my-20 bg-gray-50 px-10 sm:px-32">
-        <h3 className="text-2xl font-bold">¿Todo listo para tu nueva aventura?</h3>
+        <h3 className="text-2xl font-bold my-4">¿Todo listo para tu nueva aventura?</h3>
         <p dangerouslySetInnerHTML={{ __html: job.job_description }}></p>
       </div>
     </div>

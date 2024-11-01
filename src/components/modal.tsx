@@ -73,13 +73,13 @@ export const Modal = ({
             <button
               type="button"
               onClick={onClose}
-              className="mt-10 rounded-full bg-red-400 px-10 py-4 transition-all duration-300 hover:bg-blue-950 hover:text-gray-50 hover:border-gray-50"
+              className="mt-10 rounded-full bg-red-400 px-10 py-4 transition-all duration-200 hover:bg-red-950 hover:text-gray-50 hover:border-gray-50"
             >
               Cancelar
             </button>
             <button
               type="submit"
-              className="mt-10 rounded-full bg-gray-200 px-10 py-4 transition-all duration-300 hover:bg-blue-950 hover:text-gray-50 hover:border-gray-50"
+              className="mt-10 rounded-full bg-gray-200 px-10 py-4 transition-all duration-200 hover:bg-gradient-to-r hover:from-blue-700 hover:to-purple-700 hover:text-gray-50"
             >
               Enviar
             </button>
