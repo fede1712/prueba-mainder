@@ -1,4 +1,5 @@
 import { ApplyButton } from "@/components/apply-button";
+import { CustomToast } from "@/components/custom-toast";
 import { GoBackArrow } from "@/components/goBackArrow";
 import { JobDescription } from "@/components/job-description";
 import { getJobDetails } from "@/lib/get-job-details";
@@ -18,7 +19,7 @@ export default async function JobDetailsPage({
   }
 
   return (
-    <div>
+    <>
       <div className="flex flex-col items-center justify-center bg-gradient-to-r from-blue-950 to-purple-950 h-screen">
         <GoBackArrow />
         <div className="flex gap-4 mb-4 items-center">
@@ -44,7 +45,7 @@ export default async function JobDetailsPage({
             <p className="text-gray-50">{jobDetails.locations?.map((location: Location) => location.name)}</p>
           </div>
         </div>
-        <h2 className="font-bold text-4xl sm:text-7xl text-gray-50 text-center">{jobDetails.title}</h2>
+        <h2 className="font-bold text-4xl sm:text-7xl text-gray-50 text-center mb-10">{jobDetails.title}</h2>
         <ApplyButton
           jobDetailsTitle={jobDetails.title}
           jobDetailsLocations={jobDetails.locations}
@@ -79,6 +80,7 @@ export default async function JobDetailsPage({
           jobDetailsWorMode={jobDetails.work_mode}
         />
       </div>
-    </div>
+      {jobDetails === "error" && <CustomToast text="No hemos podido traer los detalles del trabajo" />}
+    </>
   );
 }

@@ -1,0 +1,29 @@
+.carousel:hover {
+    animation-play-state: paused;
+}
+
+.carousel-container {
+    overflow: hidden;
+    margin: auto;
+}
+
+.carousel {
+    display: flex;
+    width: max-content;
+    animation: scroll 30s linear infinite;
+}
+
+.carousel-item {
+    min-width: 192px;
+    margin-right: 10px;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-100% / 2));
+    }
+}

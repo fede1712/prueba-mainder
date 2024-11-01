@@ -1,5 +1,6 @@
 import { Location, WorkModeType } from "@/types/agencies.type";
 import { getWorkMode } from "@/utils/getWorkMode";
+import { Button } from "./button";
 
 export const Modal = ({
   isOpen,
@@ -70,19 +71,8 @@ export const Modal = ({
             <input type="email" id="email" required className="border border-gray-200 rounded-md p-2 w-full" />
           </div>
           <div className="flex justify-center sm:justify-end gap-2">
-            <button
-              type="button"
-              onClick={onClose}
-              className="mt-10 rounded-full bg-red-400 px-10 py-4 transition-all duration-200 hover:bg-red-950 hover:text-gray-50 hover:border-gray-50"
-            >
-              Cancelar
-            </button>
-            <button
-              type="submit"
-              className="mt-10 rounded-full bg-gray-200 px-10 py-4 transition-all duration-200 hover:bg-gradient-to-r hover:from-blue-700 hover:to-purple-700 hover:text-gray-50"
-            >
-              Enviar
-            </button>
+            <Button onClick={onClose} text="Cancelar" bgColor="bg-red-400" />
+            <Button onClick={handleSubmit} text="Enviar" />
           </div>
         </form>
       </div>

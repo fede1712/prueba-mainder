@@ -1,6 +1,7 @@
 import { getAgenciesConfiguration } from "@/lib/get-agencies-configuration";
 import Link from "next/link";
 import { GoBackArrow } from "./goBackArrow";
+import { CustomToast } from "./custom-toast";
 
 export const AgencyHero = async ({ agencySlug }: { agencySlug: string }) => {
   const agencyData = await getAgenciesConfiguration(agencySlug);
@@ -36,6 +37,7 @@ export const AgencyHero = async ({ agencySlug }: { agencySlug: string }) => {
           <path d="M6 13l6 6" />
         </svg>
       </Link>
+      {agencyData === "error" && <CustomToast text="No hemos podido traer todas las configuraciones de las agencias" />}
     </div>
   );
 };
