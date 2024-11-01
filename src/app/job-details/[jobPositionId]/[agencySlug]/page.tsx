@@ -42,8 +42,12 @@ export default async function JobDetailsPage({
             <p className="text-gray-50">{jobDetails.locations.map((location: Location) => location.name)}</p>
           </div>
         </div>
-        <h2 className="font-bold text-7xl text-gray-50 text-center">{jobDetails.title}</h2>
-        <ApplyButton jobDetailsTitle={jobDetails.title} />
+        <h2 className="font-bold text-4xl sm:text-7xl text-gray-50 text-center">{jobDetails.title}</h2>
+        <ApplyButton
+          jobDetailsTitle={jobDetails.title}
+          jobDetailsLocations={jobDetails.locations}
+          jobDetailsWorMode={jobDetails.work_mode}
+        />
 
         <Link href="#details" className="pt-20">
           <svg
@@ -67,7 +71,11 @@ export default async function JobDetailsPage({
       </div>
       <JobDescription job={jobDetails} />
       <div className="flex justify-center items-center my-10">
-        <ApplyButton jobDetailsTitle={jobDetails.title} />
+        <ApplyButton
+          jobDetailsTitle={jobDetails.title}
+          jobDetailsLocations={jobDetails.locations}
+          jobDetailsWorMode={jobDetails.work_mode}
+        />
       </div>
     </div>
   );

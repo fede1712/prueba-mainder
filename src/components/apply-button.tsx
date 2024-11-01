@@ -2,8 +2,17 @@
 import { useState } from "react";
 import { Modal } from "./modal";
 import { Toast } from "./toast";
+import { Location, WorkModeType } from "@/types/agencies.type";
 
-export const ApplyButton = ({ jobDetailsTitle }: { jobDetailsTitle: string }) => {
+export const ApplyButton = ({
+  jobDetailsTitle,
+  jobDetailsLocations,
+  jobDetailsWorMode,
+}: {
+  jobDetailsTitle: string;
+  jobDetailsLocations: Location[];
+  jobDetailsWorMode: WorkModeType;
+}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isToastOpen, setIsToastOpen] = useState(false);
   const openModal = () => setIsModalOpen(true);
@@ -24,7 +33,14 @@ export const ApplyButton = ({ jobDetailsTitle }: { jobDetailsTitle: string }) =>
       >
         ¡Aplica!
       </button>
-      <Modal isOpen={isModalOpen} onClose={closeModal} jobDetailsTitle={jobDetailsTitle} showToast={showToast} />
+      <Modal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        jobDetailsTitle={jobDetailsTitle}
+        showToast={showToast}
+        jobDetailsLocations={jobDetailsLocations}
+        jobDetailsWorMode={jobDetailsWorMode}
+      />
       <Toast isToastOpen={isToastOpen} />
     </>
   );
