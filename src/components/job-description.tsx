@@ -29,8 +29,8 @@ export const JobDescription = ({ job }: { job: JobAgency }) => {
             <p className="text-sm gap-2 flex">
               <span className="text-gray-900 font-bold">Idiomas: </span>
               <span className="text-gray-800 capitalize">
-                {job.languages.map((language) => (
-                  <p>
+                {job.languages.map((language, idx) => (
+                  <p key={idx}>
                     {getLanguage(language.code)} - {language.proficiency}
                   </p>
                 ))}

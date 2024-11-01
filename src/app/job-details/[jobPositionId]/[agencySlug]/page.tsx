@@ -1,3 +1,4 @@
+import { ApplyButton } from "@/components/apply-button";
 import { JobDescription } from "@/components/job-description";
 import { getJobDetails } from "@/lib/get-job-details";
 import { Location } from "@/types/agencies.type";
@@ -36,9 +37,8 @@ export default async function JobDetailsPage({ params }: { params: { jobPosition
           </div>
         </div>
         <h2 className="font-bold text-7xl text-gray-50 text-center">{jobDetails.title}</h2>
-        <button className="mt-10 rounded-full bg-gray-200 px-10 py-4 transition-all duration-300 hover:bg-blue-950 hover:text-gray-50 hover:border-gray-50">
-          ¡Aplica!
-        </button>
+        <ApplyButton jobDetailsTitle={jobDetails.title} />
+
         <Link href="#details" className="pt-20">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -61,9 +61,7 @@ export default async function JobDetailsPage({ params }: { params: { jobPosition
       </div>
       <JobDescription job={jobDetails} />
       <div className="flex justify-center items-center my-10">
-        <button className="mt-10 rounded-full bg-gray-200 px-10 py-4 transition-all duration-300 hover:bg-blue-950 hover:text-gray-50 hover:border-gray-50">
-          ¡Aplica!
-        </button>
+        <ApplyButton jobDetailsTitle={jobDetails.title} />
       </div>
     </div>
   );

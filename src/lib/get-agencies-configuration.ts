@@ -6,7 +6,7 @@ export async function getAgenciesConfiguration(agencySlug: string) {
     if (res.status === "success") {
       return res.data;
     } else {
-      res.status;
+      return res.status;
     }
   } catch (err) {
     console.error("Error al obtener agencias:", err);

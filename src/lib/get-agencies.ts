@@ -7,7 +7,7 @@ export async function getAgencies() {
     if (res.status === "success" && Array.isArray(res.data)) {
       return res.data;
     } else {
-      res.status;
+      return res.status;
     }
   } catch (err) {
     console.error("Error al obtener agencias:", err);
