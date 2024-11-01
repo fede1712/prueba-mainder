@@ -11,13 +11,16 @@ export const AgenciesList = async ({ agency }: { agency: Agency }) => {
   return (
     <>
       {agenciesConfigurationData && (
-        <div className="">
+        <>
           {jobsAgenciesData?.items?.map((jobAgency: JobAgency) => (
-            <div key={jobAgency.id} className="bg-gray-200 gap-10 m-4 p-4 rounded-lg mx-32 flex justify-between">
+            <div key={jobAgency.id} className="bg-gray-200 gap-10 m-4 p-4 rounded-lg sm:mx-32 flex justify-between">
               <div className="gap-2 items-center">
-                <h3 className="text-6xl font-medium capitalize text-gray-900">{jobAgency.title}</h3>
-                <div className="flex gap-10  items-center mt-2">
-                  <p className="font-semibold text-gray-900">{getWorkMode(jobAgency.work_mode)}</p>
+                <h3 className="font-semibold text-xl sm:text-6xl sm:font-medium capitalize text-gray-900">
+                  {jobAgency.title}
+                </h3>
+                <div className="flex gap-1 sm:gap-2 items-center mt-2">
+                  <p className="font-semibold text-gray-900">{getWorkMode(jobAgency.work_mode)} </p>
+                  <span className="flex justify-center items-center text-gray-900"> - </span>
                   <div className="flex gap-1 items-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -42,16 +45,27 @@ export const AgenciesList = async ({ agency }: { agency: Agency }) => {
                 </div>
               </div>
 
-              <div className="flex gap-4 items-center">
+              <div className="gap-4 items-center flex flex-col">
                 <Link href={`/job-details/${jobAgency.id}/${agency.slug}`}>
-                  <button className="bg-gray-200 border border-gray-900 text-gray-900 px-8 py-2 rounded-full transition-all duration-300 hover:bg-blue-950 hover:text-gray-50 hover:border-gray-50">
+                  <button className="bg-gray-200 border border-gray-900 text-gray-900 px-4 sm:px-8 py-2 rounded-full transition-all duration-300 hover:bg-blue-950 hover:text-gray-50 hover:border-gray-50">
                     Aplicar
                   </button>
                 </Link>
+
+                <div className={`flex gap-2 items-center bg-[${agenciesConfigurationData.primary_color}]`}>
+                  {agenciesConfigurationData.logo_url && (
+                    <img
+                      src={agenciesConfigurationData.logo_url}
+                      alt={agenciesConfigurationData.name}
+                      className="h-4 sm:h-6 rounded-full"
+                    />
+                  )}
+                  {agenciesConfigurationData.name && <p className="text-xs font-semibold sm:text-sm">{agency.name}</p>}
+                </div>
               </div>
             </div>
           ))}
-        </div>
+        </>
       )}
     </>
   );

@@ -6,7 +6,7 @@ export const JobDescription = ({ job }: { job: JobAgency }) => {
     <div id="details">
       <h2 className="text-center font-bold text-5xl my-12 text-gray-900">Detalles de la posición</h2>
 
-      <div className="grid grid-cols-3 gap-2 mx-28 ">
+      <div className="flex flex-col sm:grid mx-8 gap-2 sm:grid-cols-3 sm:mx-28 ">
         <div className="bg-gray-200 px-10 py-4 rounded-lg">
           <h4 className="text-2xl font-bold">Requisitos</h4>
           {job.years_experience.from && job.years_experience.to && (
@@ -50,7 +50,7 @@ export const JobDescription = ({ job }: { job: JobAgency }) => {
         )}
 
         {job.soft_skills && (
-          <div className={`bg-gray-200 px-10 py-4 rounded-lg ${job.benefits ? "row-span-2" : ""}`}>
+          <div className={`bg-gray-200 px-10 py-4 rounded-lg ${job.benefits ? "sm:row-span-2" : ""}`}>
             <h4 className="text-2xl font-bold">Soft skills</h4>
             {job.soft_skills.map((softSkill) => (
               <ul key={softSkill.id}>
@@ -81,7 +81,7 @@ export const JobDescription = ({ job }: { job: JobAgency }) => {
           </div>
         )}
       </div>
-      <div className="my-20 bg-gray-50 px-32">
+      <div className="my-20 bg-gray-50 px-10 sm:px-32">
         <h3 className="text-2xl font-bold">¿Todo listo para tu nueva aventura?</h3>
         <p dangerouslySetInnerHTML={{ __html: job.job_description }}></p>
       </div>

@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export const Hero = () => {
   return (
-    <div className="flex flex-col items-center justify-center bg-gradient-to-r from-blue-950 to-purple-950 h-screen">
-      <h1 className="font-bold text-7xl text-center  border-2 border-gray-50 p-10 m-10 mt-20 rounded-lg bg-gradient-to-r from-purple-700 to-blue-700 text-transparent bg-clip-text">
+    <div className="flex flex-col items-center justify-center bg-gradient-to-r from-blue-950 to-purple-950 sm:h-screen">
+      <h1 className="font-bold text-4xl sm:text-7xl text-center  border-2 border-gray-50 p-10 m-10 mt-20 rounded-lg bg-gradient-to-r from-purple-700 to-blue-700 text-transparent bg-clip-text">
         Encuentra tu próximo desafío: el trabajo que mereces está a un clic de distancia.
       </h1>
 
