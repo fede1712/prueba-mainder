@@ -3,7 +3,7 @@ import { getLanguage } from "@/utils/getLanguage";
 
 export const JobDescription = ({ job }: { job: JobAgency }) => {
   return (
-    <div id="details">
+    <div id="details" className="m-auto md:px-12 sm:max-w-sm md:max-w-4xl xl:max-w-7xl">
       <h2 className="text-center font-bold text-5xl my-12 text-gray-900">Detalles de la posición</h2>
 
       <div className="flex flex-col sm:grid mx-8 gap-2 sm:grid-cols-3 sm:mx-28 ">

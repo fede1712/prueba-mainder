@@ -18,7 +18,7 @@ export const JobList = async ({ agency }: { agency: Agency }) => {
             jobsAgenciesData?.items?.map((jobAgency: JobAgency) => (
               <div
                 key={jobAgency.id}
-                className="bg-gray-200 gap-10 m-4 p-4 rounded-lg sm:mx-32 flex justify-between items-center dark:bg-gray-800"
+                className="bg-gray-200 gap-10 m-4 p-4 rounded-lg flex justify-between items-center dark:bg-gray-800"
               >
                 <div className="gap-2 items-center">
                   <h3 className="font-semibold text-xl h-fit sm:text-6xl sm:font-medium capitalize bg-gradient-to-r from-purple-700 to-blue-700 text-transparent bg-clip-text">

@@ -20,7 +20,7 @@ export default async function JobDetailsPage({
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center bg-gradient-to-r from-blue-950 to-purple-950 h-screen">
+      <div className="flex flex-col items-center justify-center bg-gradient-to-r from-blue-950 to-purple-950 h-screen ">
         <GoBackArrow />
         <div className="flex gap-4 mb-4 items-center">
           <p className="font-semibold text-gray-50">{getWorkMode(jobDetails.work_mode)}</p>
@@ -73,7 +73,7 @@ export default async function JobDetailsPage({
         </Link>
       </div>
       <JobDescription job={jobDetails} />
-      <div className="flex justify-center items-center my-10">
+      <div className="flex justify-center items-center my-10 m-auto md:px-12 sm:max-w-sm md:max-w-4xl xl:max-w-7xl">
         <ApplyButton
           jobDetailsTitle={jobDetails.title}
           jobDetailsLocations={jobDetails.locations}
