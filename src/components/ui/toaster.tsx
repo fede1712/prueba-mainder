@@ -8,7 +8,6 @@ export function Toaster() {
   return (
     <ToastProvider>
       {toasts.map(function ({ id, title, description, action, ...props }) {
-        console.log(props);
         return (
           <Toast key={id} {...props} className={`${!props.variant && "dark:text-gray-50 dark:bg-gray-900"}`}>
             <div className="grid gap-1 ">
