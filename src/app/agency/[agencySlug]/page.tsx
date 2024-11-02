@@ -12,7 +12,7 @@ export default async function AgencyPage({ params }: { params: Promise<{ agencyS
     <>
       <AgencyHero agencySlug={(await params).agencySlug} />
 
-      <h2 className="text-center font-bold text-5xl my-12 text-gray-900" id="agencies-vacancies">
+      <h2 className="text-center font-bold text-5xl my-12 text-gray-900 dark:text-gray-50" id="agencies-vacancies">
         {jobsByAgency?.items?.length ? "Posiciones abiertas" : "No hay posiciones disponibles"}
       </h2>
       <JobList agency={agencyData} />

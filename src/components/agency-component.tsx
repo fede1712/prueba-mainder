@@ -9,7 +9,7 @@ export const AgencyComponent = async ({ agency }: { agency: Agency }) => {
 
   return (
     <Link href={`/agency/${agency.slug}`} className="hover:scale-105 transform transition duration-200 carousel-item">
-      <div className="flex gap-4 flex-col justify-center items-center bg-gray-200 py-4 px-10 rounded-lg w-72 sm:w-40 h-40">
+      <div className="flex gap-4 flex-col justify-center items-center bg-gray-200 py-4 px-10 rounded-lg w-72 sm:w-40 h-40 dark:bg-gray-800">
         {agenciesConfigurationData?.logo_url && (
           <img
             src={agenciesConfigurationData?.logo_url}
