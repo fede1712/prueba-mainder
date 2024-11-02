@@ -3,7 +3,7 @@ import { getJobsAgencies } from "@/lib/get-jobs-agencies";
 import { Agency, JobAgency } from "@/types/agencies.type";
 import { getWorkMode } from "@/utils/getWorkMode";
 import Link from "next/link";
-import { Button } from "./button";
+import { CustomButton } from "./custom-button";
 import { CustomToast } from "./custom-toast";
 
 export const JobList = async ({ agency }: { agency: Agency }) => {
@@ -51,7 +51,7 @@ export const JobList = async ({ agency }: { agency: Agency }) => {
                   </div>
                 </div>
                 <Link href={`/job-details/${jobAgency.id}/${agency.slug}`}>
-                  <Button
+                  <CustomButton
                     text="Aplicar"
                     bgColor="bg-gradient-to-r from-blue-700 to-purple-700"
                     textColor="text-gray-50"

@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Modal } from "./modal";
 import { Location, WorkModeType } from "@/types/agencies.type";
-import { Button } from "./button";
+import { CustomButton } from "./custom-button";
 import { useToast } from "@/hooks/use-toast";
 import { Toaster } from "./ui/toaster";
 
@@ -28,7 +28,7 @@ export const ApplyButton = ({
 
   return (
     <>
-      <Button onClick={openModal} text="¡Aplica!" />
+      <CustomButton onClick={openModal} text="¡Aplica!" />
       <Modal
         isOpen={isModalOpen}
         onClose={closeModal}

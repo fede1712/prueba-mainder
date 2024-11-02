@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Button } from "./button";
+import { CustomButton } from "./custom-button";
 
 export const Hero = () => {
   return (
@@ -9,7 +9,7 @@ export const Hero = () => {
       </h1>
 
       <Link href="#vacancies" className="flex flex-col justify-center items-center">
-        <Button text="Ver ofertas" />
+        <CustomButton text="Ver ofertas" />
       </Link>
     </div>
   );
