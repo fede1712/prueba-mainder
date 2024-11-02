@@ -3,7 +3,8 @@ import { useState } from "react";
 import { Modal } from "./modal";
 import { Location, WorkModeType } from "@/types/agencies.type";
 import { Button } from "./button";
-import toast, { Toaster } from "react-hot-toast";
+import { useToast } from "@/hooks/use-toast";
+import { Toaster } from "./ui/toaster";
 
 export const ApplyButton = ({
   jobDetailsTitle,
@@ -15,10 +16,12 @@ export const ApplyButton = ({
   jobDetailsWorMode: WorkModeType;
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { toast } = useToast();
+
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
-  const showToast = () => toast.success("Has aplicado a la oferta correctamente");
+  const showToast = () => toast({ description: "Has aplicado correctamente" });
 
   return (
     <>
@@ -31,7 +34,7 @@ export const ApplyButton = ({
         jobDetailsLocations={jobDetailsLocations}
         jobDetailsWorMode={jobDetailsWorMode}
       />
-      <Toaster position="bottom-right" />
+      <Toaster />
     </>
   );
 };

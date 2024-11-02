@@ -1,15 +1,15 @@
 "use client";
 
-import { useEffect } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import { useToast } from "@/hooks/use-toast";
+import { Toaster } from "./ui/toaster";
+import { use, useEffect } from "react";
 
 export const CustomToast = ({ text }: { text: string }) => {
-  const showErrorToast = () => toast.error(text);
+  const { toast } = useToast();
 
   useEffect(() => {
-    showErrorToast();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    toast({ description: text, variant: "destructive" });
   }, []);
 
-  return <Toaster position="bottom-right" />;
+  return <Toaster />;
 };
