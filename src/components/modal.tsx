@@ -24,7 +24,7 @@ export const Modal = ({
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50    bg-opacity-50">
+    <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
       <div className="bg-white mx-10 rounded-lg p-6 shadow-lg sm:w-1/3 dark:bg-gray-900">
         <h2 className="text-4xl text-gray-900 font-semibold mb-4 text-center dark:text-gray-50">{jobDetailsTitle}</h2>
         <div className="flex gap-4 mb-4 items-center justify-center">
