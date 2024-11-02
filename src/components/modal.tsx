@@ -57,19 +57,34 @@ export const Modal = ({
             <label className="block text-sm font-medium mb-2" htmlFor="name">
               Nombre
             </label>
-            <input type="text" id="name" required className="border border-gray-300 rounded-md p-2 w-full" />
+            <input
+              type="text"
+              id="name"
+              required
+              className="border border-gray-300 rounded-md p-2 w-full dark:bg-gray-800 dark:border-gray-800"
+            />
           </div>
           <div className="mb-4">
             <label className="block text-sm font-medium mb-2" htmlFor="name">
               Apellidos
             </label>
-            <input type="text" id="name" required className="border border-gray-300 rounded-md p-2 w-full" />
+            <input
+              type="text"
+              id="name"
+              required
+              className="border border-gray-300 rounded-md p-2 w-full dark:bg-gray-800 dark:border-gray-800"
+            />
           </div>
           <div className="mb-4">
             <label className="block text-sm font-medium mb-2" htmlFor="email">
               Correo Electrónico
             </label>
-            <input type="email" id="email" required className="border border-gray-200 rounded-md p-2 w-full" />
+            <input
+              type="email"
+              id="email"
+              required
+              className="border border-gray-200 rounded-md p-2 w-full dark:bg-gray-800 dark:border-gray-800"
+            />
           </div>
           <div className="flex justify-center sm:justify-end gap-2">
             <button
