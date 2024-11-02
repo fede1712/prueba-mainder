@@ -13,7 +13,7 @@ export const AgencyHero = async ({ agencySlug }: { agencySlug: string }) => {
         <img
           src={agencyData.logo_url}
           alt="Logo de la agencia"
-          className="h-32 mt-20 sm:mt-0 sm:h-48 object-contain rounded-full"
+          className="max-w-52 sm:max-w-96 mt-20 sm:mt-0 sm:h-48 object-contain rounded-full"
         />
       )}
       <h1 className="font-bold text-4xl sm:text-7xl text-center p-10 m-10 mt-20 text-gray-50">{agencyData.name}</h1>

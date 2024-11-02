@@ -21,7 +21,10 @@ export const ApplyButton = ({
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
-  const showToast = () => toast({ description: "Has aplicado correctamente" });
+  const showToast = () =>
+    toast({
+      description: "Has aplicado correctamente",
+    });
 
   return (
     <>

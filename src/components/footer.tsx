@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export const Footer = () => {
   return (
-    <footer className="h-52 border-t-2 p-4 text-center flex justify-between items-center bg-gray-50 px-20 dark:bg-gray-900">
+    <footer className="h-52 border-t-2 p-4 text-center flex justify-between items-center bg-gray-50 sm:px-20 dark:bg-gray-900">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 991.57 177.92"
