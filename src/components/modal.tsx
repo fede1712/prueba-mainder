@@ -16,8 +16,8 @@ export const Modal = ({
   jobDetailsLocations: Location[];
   jobDetailsWorMode: WorkModeType;
 }) => {
-  if (!isOpen) return null;
   const router = useRouter();
+  if (!isOpen) return null;
 
   const handleSubmit = () => {
     onClose();
