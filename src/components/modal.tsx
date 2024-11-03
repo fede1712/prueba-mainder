@@ -1,26 +1,27 @@
+"use client";
 import { Location, WorkModeType } from "@/types/agencies.type";
 import { getWorkMode } from "@/utils/getWorkMode";
+import { useRouter } from "next/navigation";
 
 export const Modal = ({
   isOpen,
   onClose,
   jobDetailsTitle,
-  showToast,
   jobDetailsLocations,
   jobDetailsWorMode,
 }: {
   isOpen: boolean;
   onClose: () => void;
   jobDetailsTitle: string;
-  showToast: () => void;
   jobDetailsLocations: Location[];
   jobDetailsWorMode: WorkModeType;
 }) => {
   if (!isOpen) return null;
+  const router = useRouter();
 
   const handleSubmit = () => {
     onClose();
-    showToast();
+    router.push("/succes");
   };
 
   return (

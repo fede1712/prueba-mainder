@@ -1,36 +1,115 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PRUBA MAINDER
 
-## Getting Started
+Esta aplicación consiste en disponer de un sencillo portal de empleo para los usuarios. Donde podemos postularnos rápidamente a diferentes candidaturas de diferentes agencias de empleo.
 
-First, run the development server:
+URL de producción: [Pueba Mainder](https://prueba-mainder.vercel.app/)
+
+## Comenzando
+
+1. Clona el repositorio ⚡️:
+
+```bash
+git clone https://github.com/fede1712/prueba-mainder.git
+```
+
+2. Instala las dependencias 💻:
+
+```bash
+npm install
+```
+
+3. Si tienes problemas usando npm install, puedes usar el comando npm install --force. (Esto se debe a que hemos utilizado una librería de componentes, Shadcn/ui para montar el sistema de temas y notificaciones de la aplicación. En la misma documentación de la librería recomienda usar este comando porque no todos los componentes están optimizados para React 19).
+
+```bash
+npm install --force
+```
+
+## Levantando la aplicación
+
+Para correr el servidor de desarrollo 🚀:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Para correr el servidor de producción, primero debemos construir el proyecto 🧱🔨:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Ahora, podemos levantar el servidor de producción 🚀:
 
-## Learn More
+```bash
+npm run start
+```
 
-To learn more about Next.js, take a look at the following resources:
+Abre [http://localhost:3000](http://localhost:3000) con tu navegador para ver el resultado.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Tech Stack elegido
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Next.js
+- Tailwind CSS
+- TypeScript
+- ESLint
+- Tailwind animate
 
-## Deploy on Vercel
+## Estrcutura del proyecto
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+.
+├── README.md
+├── src
+│   ├── app
+│   ├── components
+│   ├── hooks
+│   ├── lib
+│   ├── types
+│   ├── utils
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+
+- **`app`**: Contiene la estructura principal de la aplicación, incluyendo la página principal `page.tsx`, los estilos globales `globals.css` y la página 404 (`not-found.tsx`). También incluye subdirectorios para páginas específicas.
+- **`components`**: Esta carpeta contiene los componentes utilizados en la aplicación.
+- **`hooks`**: Esta carpeta contiene los ganchos personalizados utilizados en la aplicación.
+- **`lib`**: Esta carpeta contiene los archivos para poder realizar las llamadas a la api.
+- **`types`**: Esta carpeta contiene los tipos utilizados en la aplicación.
+- **`utils`**: Esta carpeta contiene distintas funciones útiles utilizadas en la aplicación.
+
+## Suposiciones tomadas y razones detrás de cada una.
+
+### Stack
+
+- **`Next.js`**: Es una plataforma de desarrollo web de código abierto que permite crear aplicaciones web de alto rendimiento y escalabilidad. Es una de las opciones más populares para construir aplicaciones web en React.
+
+- **`Tailwind CSS`**: Es una biblioteca de CSS de código abierto que proporciona una estructura de diseño limpia y moderna para aplicaciones web. Es una opción popular para construir aplicaciones web con estilos y componentes de código abierto.
+
+- **`TypeScript`**: Es un lenguaje de programación de código abierto que agrega tipos y soporte para la programación orientada a objetos.
+
+- **`ESLint`**: Es una herramienta de análisis estático y automático para la identificación y corregir errores en código JavaScript y TypeScript.
+
+### Decisiones tomadas
+
+- **`Diseño`**:
+
+  - Se decidió utilizar un Hero para las páginas de la aplicación que fuera atractivo y sencillo de entender. La idea es que cada vez que entremos en una página, sepamos donde estamos. Por otro lado, usar un Hero en cada una de las páginas nos permite una unificaición de crirterios en el diseño.
+
+  - Ya que es una aplicación de empleo, creemos que era importante mostrar todos los empleos disponibles en la página principal, sin hacer diferencias entre agencias. Aunque al final de la página principal podemos ir a la página de cada una de las agencias y ver los empleos disponibles de esa agencia.
+
+  - Cuando hacemos click en el botón de ver ofertas o la flecha hacia abajo en el hero de cada empleo, nos hace un scroll de forma automática hasta la parte inferior de la página, donde podemos ver todas las ofertas disponibles o los detalles de la oferta seleccionada.
+
+  - Al hacer click en el botón de aplicar, en el listado de ofertas, nos lleva hasta la página del detalles de la oferta.
+
+  - En la página de detalles de la oferta, se muestra un scroll de forma automática hasta la parte inferior de la página, donde podemos ver todos los detalles de la oferta seleccionada.
+
+  - Si vamos a la sección de "Nuestras Agencias", podemos ver todas las agencias disponibles en la aplicación en un scroll horizontal infinito automático.
+
+  - Cuando hacemos click en una agencia, nos lleva a la página de la misma, donde podemos ver los empleos disponibles de dicha agencia.
+
+  - Al igual que en el listado general de las ofertas, podemos hacer click en el botón de aplicar para ver los detalles de la oferta seleccionada.
+
+  - Una vez en la página de detalles de la oferta, podemos hacer click en el botón de "¡Aplica!" para ver el formulario de aplicación. Rellenamos el formulario con los datos requeridos y nos lleva a la página de confirmación de la aplicación.
+
+  - Por otro lado, cuando intentamos ir a una ruta que no existe, nos lleva a la página de error 404 customizada.
+
+  - Por último, cabe destacar que toda la aplicaicón está preparada para ser adaptada a diferentes tamaños de pantalla, ya sea en dispositivos móviles o de escritorio haciendo que el diseño sea responsive.

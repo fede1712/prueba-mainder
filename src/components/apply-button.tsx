@@ -3,8 +3,6 @@ import { useState } from "react";
 import { Modal } from "./modal";
 import { Location, WorkModeType } from "@/types/agencies.type";
 import { CustomButton } from "./custom-button";
-import { useToast } from "@/hooks/use-toast";
-import { Toaster } from "./ui/toaster";
 
 export const ApplyButton = ({
   jobDetailsTitle,
@@ -16,15 +14,9 @@ export const ApplyButton = ({
   jobDetailsWorMode: WorkModeType;
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { toast } = useToast();
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
-
-  const showToast = () =>
-    toast({
-      description: "Has aplicado correctamente",
-    });
 
   return (
     <>
@@ -33,11 +25,9 @@ export const ApplyButton = ({
         isOpen={isModalOpen}
         onClose={closeModal}
         jobDetailsTitle={jobDetailsTitle}
-        showToast={showToast}
         jobDetailsLocations={jobDetailsLocations}
         jobDetailsWorMode={jobDetailsWorMode}
       />
-      <Toaster />
     </>
   );
 };

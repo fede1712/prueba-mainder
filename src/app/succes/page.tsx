@@ -1,10 +1,12 @@
 import { CustomButton } from "@/components/custom-button";
 import Link from "next/link";
 
-export default function NotFoundPage() {
+export default function SuccesPage() {
   return (
     <div className="w-screen h-screen flex flex-col justify-center items-center">
-      <h2 className="text-6xl font-bold text-gray-900 dark:text-gray-50 text-center">Página no encontrada</h2>
+      <h2 className="text-4xl sm:text-6xl font-bold text-gray-900 dark:text-gray-50 text-center">
+        ¡Tu aplicación ha sido enviada con éxito!
+      </h2>
       <Link href="/" className="mt-10">
         <CustomButton
           text="Volver a la página principal"

@@ -3,8 +3,8 @@ import { Agency, JobAgency } from "@/types/agencies.type";
 import { getWorkMode } from "@/utils/getWorkMode";
 import { CustomButton } from "./custom-button";
 import { useRef } from "react";
-import { useIsVisible } from "@/utils/useIsVisible";
 import Link from "next/link";
+import { useIsVisible } from "@/hooks/useIsVisible";
 
 export const JobComponent = ({ job, agency }: { job: JobAgency; agency: Agency }) => {
   const ref = useRef<HTMLDivElement>(null);
